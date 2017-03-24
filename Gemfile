@@ -5,6 +5,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+
+gem 'cancancan', '~> 1.16'
+gem 'rails_admin', '~> 1.1', '>= 1.1.1'
+gem 'remotipart', '~> 1.3', '>= 1.3.1'
 gem 'toastr-rails', '~> 1.0', '>= 1.0.3'
 gem 'devise', '~> 4.2', '>= 4.2.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
