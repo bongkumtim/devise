@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  ringgitcoin: 9.99
+  bahtcoin: 9.99
+  rupiahcoin: 9.99
+  singcoin: 9.99
+
+two:
+  user: two
+  ringgitcoin: 9.99
+  bahtcoin: 9.99
+  rupiahcoin: 9.99
+  singcoin: 9.99
