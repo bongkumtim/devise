@@ -1,0 +1,2 @@
+module EwalletsHelper
+end

@@ -1,7 +1,7 @@
 class HomesController < ApplicationController
 
 	def index
-		@accounts = Account.all
+		@ewallet = Ewallet.where(user_id: current_user.id)
 	end
 
 	def new

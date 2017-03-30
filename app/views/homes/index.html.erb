@@ -3,44 +3,44 @@
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar"><% if user_signed_in? %> 
             <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-            <li><%= link_to 'Top Up e-Wallet', accounts_path %></li>
+            <li><%= link_to 'Top Up e-Wallet', ewallets_path %></li>
             <li><a href="#">Exchange Rate</a></li>
             <li><a href="#">CryptoCurrency Rate</a></li>
           </ul>
           <ul class="nav nav-sidebar">
             <li> <%= link_to('Edit registration', edit_user_registration_path) %></li>
             <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li><%end%>
-            <% if current_user.superadmin_role? %>
-            <li><a href="">One more nav</a></li>
+           <li><%=  %></li>
+            <% if current_user.superadmin_role? %>            
             <li><a href="">Another nav item</a></li>
             <li><a href="">More navigation</a></li>
           </ul>
 			<p>Visible only for superadmins and supervisors! </p>
 			<% end %>
         </div>
-        <% @accounts.each do|account| %>
+       
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header"> <%=current_user.email%> Dashboard</h1>
           <div class="row placeholders">
             <div class="col-xs-6 col-sm-3 placeholder">
               <%= image_tag"rm.jpg", class: "img-responsive",alt:"Generic placeholder thumbnail"%>
               <h4>RinggitCoin</h4>
-              <span class="text-muted"><%= '%.2f' %account.ringgitcoin %></span>
+              <span class="text-muted"></span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
                <%= image_tag"sgd.jpg", class: "img-responsive",alt:"Generic placeholder thumbnail"%>
               <h4>SingCoin</h4>
-              <span class="text-muted"><%= '%.2f' %account.singcoin %></span>
+              <span class="text-muted"></span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
                <%= image_tag"bat.jpg", class: "img-responsive",alt:"Generic placeholder thumbnail"%>
               <h4>BahtCoin</h4>
-              <span class="text-muted"><%= '%.2f' %account.bahtcoin %></span>
+              <span class="text-muted"></span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
               <%= image_tag"ripiah.jpg", class: "img-responsive",alt:"Generic placeholder thumbnail"%>
               <h4>RupiahCoin</h4>
-              <span class="text-muted"><%= '%.2f' %account.rupiahcoin %></span>
+              <span class="text-muted"></span>
             </div>
           </div>
           <h2 class="sub-header">Transaction Details</h2>
@@ -50,44 +50,25 @@
                 <tr>
                   <th>Date</th>
                   <th>Description</th>
-                  <th>Credit</th>
-                  <th>Debit</th>
+                  <th>Currency</th>
+                  <th></th>
                   <th>Balance</th>
                 </tr>
               </thead>
               <tbody>
+              <% @ewallet.each do |x| %>
                 <tr>
-                  <td><%= account.created_at%></td>
-                  <td>Top up from cash machine</td>
-                  <td>RinggitCoin <%= '%.2f' %account.ringgitcoin %></td>
-                  <td>-</td>
-                  <td><%= '%.2f' %account.ringgitcoin %></td>
-                </tr>
-                <tr>
-                  <td><%= account.created_at%></td>
-                  <td>Top up from cash machine</td>
-                  <td>SingCoin <%= '%.2f' %account.singcoin %></td>
-                  <td>-</td>
-                  <td><%= '%.2f' %account.singcoin %></td>
-                </tr>
-                <tr>
-                  <td><%= account.created_at%></td>
-                  <td>Top up from cash machine</td>
-                  <td>BahtCoin <%= '%.2f' %account.bahtcoin %></td>
-                  <td>-</td>
-                  <td><%= '%.2f' %account.bahtcoin %></td>
-                </tr>
-                <tr>
-                  <td><%= account.created_at%></td>
-                  <td>Top up from cash machine</td>
-                  <td>RupiahCoin <%= '%.2f' %account.rupiahcoin %></td>
-                  <td>-</td>
-                  <td><%= '%.2f' %account.rupiahcoin %></td>
+                  <td><%= x.created_at %></td>
+                  <td><%= x.choice %></td>
+                  <td><%= x.currency %></td>
+                  <td><%= x.description %></td>
+                  <td><%= x.balance %></td>
                 </tr>
               </tbody>
+              <% end %>
             </table>
-            <% end %>
           </div>
         </div>
       </div>
     </div>
+ 
