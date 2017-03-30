@@ -1,0 +1,38 @@
+<div class="container top-margin">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <div class="greeting">Hi, <%=current_user.email%>! Let’s start your ewallet
+          <br> and start saving!
+        </div>
+        <br>
+        <br>
+        <div class="small">STEP 1</div>
+        <div class="place">What kind of currency you want to top up ???</div>
+
+<%= form_for (@ewallet) do |p| %>
+<select name="ewallet[currency]">
+  <option value="ringgitcoin">RinggitCoin</option>
+  <option value="singcoin">SingCoin</option>
+  <option value="bahtcoin">BahtCoin</option>
+  <option value="rupiahcoin">RupiahCoin</option>
+</select><br><br>
+
+        <div class="small">STEP 2</div>
+        <div class="place">Please choose the top up method</div>
+  <select name="ewallet[choice]">
+  <option value="cash deposit machine">Cash Deposit Machine</option>
+  <option value="online transfer">Online Transfer</option>
+  <option value="crypto transfer">Crypto Transfer</option>
+  <option value="paypal">PayPal</option>
+</select><br><br>
+
+
+        <div class="small">STEP 3</div>
+        <div class="place">Please enter the amount</div>
+  <select name="ewallet[description]">
+  <option value="credit">Transfer Immediately</option>
+  </select>
+  <%= p.label :balance %>:
+  <%= p.number_field :balance %><br/>
+  <h4><%= p.submit %></h4>
+<%end%>

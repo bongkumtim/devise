@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  currency: MyString
+  description: MyString
+  choice: MyString
+  balance: 1
+
+two:
+  user: two
+  currency: MyString
+  description: MyString
+  choice: MyString
+  balance: 1
