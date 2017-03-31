@@ -5,10 +5,10 @@
   <div class="col-xs-6 col-sm-6 col-lg-4">
   <p> Recipient name </p>
   <%= render "search" %>
-	<br><br>
+	<br><br><% if @user %>
 	<% @users.each do |x| %>
 	<p><a><%= x.email %></a></a>
-	<% end %></div>
+	<% end %><%else%> <p> No user found </p><%end%></div>
 
   <div class="col-xs-6 col-sm-6 col-lg-4">
   <%= form_for (@ewallet) do |p| %>

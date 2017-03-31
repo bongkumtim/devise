@@ -22,11 +22,14 @@ class HomesController < ApplicationController
 	end
 
 	def transfer
+		
 		@users = if params[:search]
-    	User.where('email LIKE ?', "%#{params[:search]}%")
+    	User.where('email LIKE ?',"%#{params[:search]}%")
+     	else
+    	User.all
   		end
+
   		@ewallet = Ewallet.new
-  		
 	end
 
 	def value
