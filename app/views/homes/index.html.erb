@@ -25,25 +25,25 @@
             <div class="col-xs-6 col-sm-3 placeholder">
               <%= link_to (image_tag"rm.jpg", class: "img-responsive",alt:"Generic placeholder thumbnail"), ringgit_path %>
               <h4>RinggitCoin</h4>
-              <span class="text-muted"></span>
+              <span class="text-muted"><%= number_to_currency(@ringgit) %></span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
                <%= link_to (image_tag"sgd.jpg", class: "img-responsive",alt:"Generic placeholder thumbnail"), sing_path %>
               <h4>SingCoin</h4>
-              <span class="text-muted"></span>
+              <span class="text-muted"><%= number_to_currency(@sing) %></span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
                <%= link_to (image_tag"bat.jpg", class: "img-responsive",alt:"Generic placeholder thumbnail"), baht_path%>
               <h4>BahtCoin</h4>
-              <span class="text-muted"></span>
+              <span class="text-muted"><%= number_to_currency(@baht) %></span>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
               <%= link_to (image_tag"ripiah.jpg", class: "img-responsive",alt:"Generic placeholder thumbnail"), rupiah_path%>
               <h4>RupiahCoin</h4>
-              <span class="text-muted"></span>
+              <span class="text-muted"><%= number_to_currency(@rupiah) %></span>
             </div>
           </div>
-          <h2 class="sub-header">Transaction Details <%= @balance %></h2>
+          <h2 class="sub-header">Transaction Details</h2>
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>
@@ -56,16 +56,13 @@
                 </tr>
               </thead>
               <tbody>
-              <% running_total = 0 %>
               <% @ewallet.each do |x| %>
                 <tr>
                   <td><%= x.created_at %></td>
                   <td><%= x.description %> from <%= x.choice %></td>
                   <td><%= x.currency %></td>
                   <td><%= number_to_currency(x.balance) %></td>
-                  <% running_total = running_total + (x.balance) %>
                   <% end %>
-                  <td><%= number_to_currency(running_total) %></td>
                 </tr>
               </tbody>
             </table>
