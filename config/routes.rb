@@ -16,5 +16,8 @@ Rails.application.routes.draw do
   get '/rupiah' => "ewallets#rupiah"
   get '/sing' => "ewallets#sing"
   get '/baht' => "ewallets#baht"
+  get '/remit' => "homes#remit"
+  get '/transfer' => "homes#transfer"
+  get '/value' =>"homes#value"
 
 end

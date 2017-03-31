@@ -1,6 +1,7 @@
 class HomesController < ApplicationController
 
 	def index
+		
 		@ewallet = Ewallet.where(user_id: current_user.id).order(created_at: :desc)
 		
 		ringgit = @ewallet.where(currency: 'ringgitcoin')
@@ -14,6 +15,23 @@ class HomesController < ApplicationController
 
 		baht = @ewallet.where(currency: 'bahtcoin')
 		@baht = baht.sum(:balance)
+	end
+
+	def remit
+ 	@users = if params[:search]
+    User.where('email LIKE ?', "%#{params[:search]}%")
+  else
+    User.all
+  end
+		
+	end
+
+	def transfer
+		render 'homes/transfer'
+	end
+
+	def value
+		render 'homes/value'
 	end
 
 	def new
