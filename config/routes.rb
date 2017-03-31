@@ -10,6 +10,11 @@ Rails.application.routes.draw do
   resources :homes
   resources :accounts
   resources :ewallets
+
   get '/home' => "homes#index"
+  get '/ringgit' => "ewallets#ringgit"
+  get '/rupiah' => "ewallets#rupiah"
+  get '/sing' => "ewallets#sing"
+  get '/baht' => "ewallets#baht"
 
 end

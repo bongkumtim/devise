@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170330121108) do
+ActiveRecord::Schema.define(version: 20170331050352) do
 
   create_table "accounts", force: :cascade do |t|
     t.integer  "user_id"
@@ -28,9 +28,9 @@ ActiveRecord::Schema.define(version: 20170330121108) do
     t.string   "currency"
     t.string   "description"
     t.string   "choice"
-    t.integer  "balance",     default: 0
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.integer  "balance",     limit: 8, default: 0
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.index ["user_id"], name: "index_ewallets_on_user_id"
   end
 
