@@ -19,15 +19,18 @@
           <a class="navbar-brand" href="/home">MeLAB</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
+        <% if user_signed_in? %>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Help</a></li>
+            <li><%= link_to 'Top Up e-Wallet', ewallets_path %></li>
+            <li><a href="#">Exchange Rate</a></li>
+            <li><a href="#">CryptoCurrency Rate</a></li>
+            <li><a href="/remit">Remittance</a></li>
+            <li><a href="/transfer">Transfer</a></li>
+            <li><a href="/value">Value Added Services</a></li>
+            <li> <%= link_to('Edit registration', edit_user_registration_path) %></li>
+            <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li><%end%>
+           <li><%=  %></li>
           </ul>
-          <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search...">
-          </form>
         </div>
       </div>
     </nav>

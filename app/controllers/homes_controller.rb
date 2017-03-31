@@ -18,16 +18,15 @@ class HomesController < ApplicationController
 	end
 
 	def remit
- 	@users = if params[:search]
-    User.where('email LIKE ?', "%#{params[:search]}%")
-  else
-    User.all
-  end
 		
 	end
 
 	def transfer
-		render 'homes/transfer'
+		@users = if params[:search]
+    	User.where('email LIKE ?', "%#{params[:search]}%")
+  		end
+  		@ewallet = Ewallet.new
+  		
 	end
 
 	def value

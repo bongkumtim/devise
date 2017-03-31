@@ -1,1 +1,28 @@
-<h1> Hi to transfer </h1>
+<center><h2> Welcome to MeLAB instant and the lowest cost of P2P transfer in the world!! </h2></center>
+<br><br>
+<div class="row">
+	<div class= "col-lg-2"></div>
+  <div class="col-xs-6 col-sm-6 col-lg-4">
+  <p> Recipient name </p>
+  <%= render "search" %>
+	<br><br>
+	<% @users.each do |x| %>
+	<p><a><%= x.email %></a></a>
+	<% end %></div>
+
+  <div class="col-xs-6 col-sm-6 col-lg-4">
+  <%= form_for (@ewallet) do |p| %>
+  <p> Please choose your currency for transfer </p>
+<select name="ewallet[currency]">
+  <option value="ringgitcoin">RinggitCoin</option>
+  <option value="singcoin">SingCoin</option>
+  <option value="bahtcoin">BahtCoin</option>
+  <option value="rupiahcoin">RupiahCoin</option>
+</select><br><br>
+  <%= p.label :balance %>:
+  <%= p.number_field :balance %><br/>
+  <h4><%= p.submit %></h4>
+  <% end %></div>
+  <div class= "col-lg-2"></div>
+</div>
+
