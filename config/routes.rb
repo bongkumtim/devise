@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get '/baht' => "ewallets#baht"
   get '/remit' => "homes#remit"
   get '/transfer' => "homes#transfer"
-  get '/value' =>"homes#value"
+  get '/value' => "homes#value"
+  get '/crypto' => "homes#crypto"
 
 end

@@ -17,8 +17,10 @@ class HomesController < ApplicationController
 		@baht = baht.sum(:balance)
 	end
 
-	def remit
-		
+	def remit		
+	end
+
+	def crypto
 	end
 
 	def transfer
