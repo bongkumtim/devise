@@ -5,7 +5,7 @@
             <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
             <li><%= link_to 'Top Up e-Wallet', ewallets_path %></li>
             <li><a href="#">Exchange Rate</a></li>
-            <li><a href="#">CryptoCurrency Rate</a></li>
+            <li><a href="/crypto">CryptoCurrency Rate</a></li>
             <li><a href="/remit">Remittance</a></li>
             <li><a href="/transfer">Transfer</a></li>
             <li><a href="/value">Value Added Services</a></li>
@@ -15,8 +15,8 @@
             <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li><%end%>
            <li><%=  %></li>
             <% if current_user.superadmin_role? %>            
-            <li><a href="">Another nav item</a></li>
-            <li><a href="">More navigation</a></li>
+            <li><a href="">Bank Negara Dashboard</a></li>
+            <li><a href="">Venture Capitalist Partner Dashboard</a></li>
           </ul>
 			<p>Visible only for superadmins and supervisors! </p>
 			<% end %>
