@@ -1,16 +1,60 @@
-<center><h2> Welcome to MeLAB instant and the lowest cost of P2P transfer in the world!! </h2></center>
-<br><br>
-<div class="row">
-	<div class= "col-lg-2"></div>
-  <div class="col-xs-6 col-sm-6 col-lg-4">
+  <br><br>
+  <div class="container">
+
+        <!-- Jumbotron Header -->
+        <header class="jumbotron hero-spacer">
+            <h1>MeLAB P2P Transfer</h1>
+            <p>The best things in life are free. The second best only cost you usd 0.30!</p>
+            <p><a class="btn btn-primary btn-large">Choose what best fit you!</a>
+            </p>
+        </header>
+
+        <hr>
+
+        <!-- Title -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>Latest Features</h3>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Page Features -->
+        <div class="row text-center">
+
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <%= image_tag("p2p.jpg", class: "img-responsive",:size => "800x500") %>
+                    <div class="caption">
+                        <h3>P2P Transfer</h3>
+                        <p>Instant, Secure and Free! This is our P2P transfer. Get your members to join MeLAB and transfer for free!</p>
+                        <p>
+                            
+                            <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-primary" data-toggle="modal" data-target="#myModal">
+  Transfer Now!
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">P2P Tansfer</h4>
+      </div>
+      <div class="modal-body">
+            <div class="row">
+  <div class="col-xs-6 col-sm-6">
   <p> Recipient name </p>
   <%= render "search" %>
-	<br><br><% if @user %>
-	<% @users.each do |x| %>
-	<p><a><%= x.email %></a></a>
-	<% end %><%else%> <p> No user found </p><%end%></div>
+  <br><br><% if @user.nil? %>
+  <p> No user found </p><%else%> 
+  <% @users.each do |x| %>
+  <p><a><%= x.email %></a></a>
+  <% end %><%end%></div>
 
-  <div class="col-xs-6 col-sm-6 col-lg-4">
+  <div class="col-xs-6 col-sm-6">
   <%= form_for (@ewallet) do |p| %>
   <p> Please choose your currency for transfer </p>
 <select name="ewallet[currency]">
@@ -23,6 +67,65 @@
   <%= p.number_field :balance %><br/>
   <h4><%= p.submit %></h4>
   <% end %></div>
-  <div class= "col-lg-2"></div>
 </div>
+      </div>
+    </div>
+  </div>
+</div> <a href="#" class="btn btn-default">More Info</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
 
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <%= image_tag("creditcard.jpg", class: "img-responsive",:size => "800x500") %>
+                    <div class="caption">
+                        <h3>Debit Card</h3>
+                        <p>We provide you local debit card even when you travelling oversea. Not multicurrency card that charge exorbitant fee. That truly a mobile banking, anytime anyway</p>
+                        <p>
+                            <a href="#" class="btn btn-primary">Apply Now!</a> <a href="#" class="btn btn-default">More Info</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                   <%= image_tag("rm.jpg", class: "img-responsive",:size => "800x500") %>
+                    <div class="caption">
+                        <h3>Cash Facilities</h3>
+                        <p>No worry too! Our local Debit card can be used as ATM. We mean local ATM even when you travel oversea!</p>
+                        <p>
+                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <%= image_tag("sending_money.png", class: "img-responsive",:size => "800x500") %>
+                    <div class="caption">
+                        <h3>Receive & Send</h3>
+                        <p>Need urgent fund when travelling ? Ask help and received instantly from families or friends. Anyway Anytime. </p>
+                        <p>
+                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; MeLAB Design</p>
+                </div>
+            </div>
+        </footer>
