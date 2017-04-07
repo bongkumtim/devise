@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170331050352) do
+ActiveRecord::Schema.define(version: 20170406172018) do
 
   create_table "accounts", force: :cascade do |t|
     t.integer  "user_id"
@@ -23,6 +23,13 @@ ActiveRecord::Schema.define(version: 20170331050352) do
     t.index ["user_id"], name: "index_accounts_on_user_id"
   end
 
+  create_table "currencies", force: :cascade do |t|
+    t.string   "name"
+    t.string   "code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "ewallets", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "currency"
@@ -32,6 +39,15 @@ ActiveRecord::Schema.define(version: 20170331050352) do
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
     t.index ["user_id"], name: "index_ewallets_on_user_id"
+  end
+
+  create_table "exchange_rates", force: :cascade do |t|
+    t.integer  "currency_id"
+    t.string   "currency_code"
+    t.float    "rate"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["currency_id"], name: "index_exchange_rates_on_currency_id"
   end
 
   create_table "users", force: :cascade do |t|
