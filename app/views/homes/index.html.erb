@@ -4,7 +4,7 @@
           <ul class="nav nav-sidebar"><% if user_signed_in? %> 
             <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
             <li><%= link_to 'Top Up e-Wallet', ewallets_path %></li>
-            <li><a href="#">Exchange Rate</a></li>
+            <li><a href="/currency">Exchange Rate</a></li>
             <li><a href="/crypto" data-toggle="tooltip" data-placement="right" title="Get the best rate now">CryptoCurrency Rate</a></li>
             <li><a href="/remit" data-toggle="tooltip" data-placement="right" title="Send money home as easy as 123">Bank Transfer</a></li>
             <li><a href="/transfer" data-placement="right" title="No one match us for fast and cheap">P2P Transfer</a></li>
