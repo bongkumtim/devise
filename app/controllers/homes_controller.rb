@@ -54,6 +54,18 @@ class HomesController < ApplicationController
 		render 'homes/value'
 	end
 
-	def new
+	def currency
+		rm = Currency.find_by_code("MYR")
+		idr = Currency.find_by_code("IDR")
+		baht = Currency.find_by_code("THB")
+		sgd = Currency.find_by_code("SGD")
+
+		@rm_sg = rm.convert_to('SGD',100)
+		@sg_rm = sgd.convert_to('MYR',1)
+		@rm_idr = rm.convert_to('IDR',1)
+		@idr_rm = idr.convert_to('MYR',1000)
+		@rm_baht = rm.convert_to('THB',1)
+		@baht_rm = baht.convert_to('MYR',1000)
+
 	end
 end

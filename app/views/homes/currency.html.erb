@@ -1,0 +1,69 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center">
+                Best Rate From MeLAB
+            </h1>
+        </div>
+        <div id="no-more-tables">
+            <table class="col-md-12 table-bordered table-striped table-condensed cf">
+        		<thead class="cf">
+        			<tr>
+        				<th>Code</th>
+        				<th>Currency</th>
+        				<th class="numeric">Price</th>
+        				<th class="numeric">Code</th>
+        				<th class="numeric">Exchange</th>
+        			</tr>
+        		</thead>
+        		<tbody>
+        			<tr>
+        				<td data-title="Code">MYR</td>
+        				<td data-title="Company">100 RINGGIT MALAYSIA</td>
+        				<td data-title="Price" class="numeric">SGD</td>
+        				<td data-title="Change" class="numeric">SINGAPORE DOLLAR</td>
+        				<td data-title="Change %" class="numeric"><%= @rm_sg %></td>
+        			</tr>
+        			<tr>
+        				<td data-title="Code">SGD</td>
+        				<td data-title="Company">1 SINGAPORE DOLLAR</td>
+        				<td data-title="Price" class="numeric">MYR</td>
+        				<td data-title="Change" class="numeric">MALAYSIA RINGGIT</td>
+        				<td data-title="Change %" class="numeric"><%= @sg_rm %></td>
+        			</tr>
+        			<tr>
+        				<td data-title="Code">MYR</td>
+        				<td data-title="Company">1 RINGGIT MALAYSIA</td>
+        				<td data-title="Price" class="numeric">IDR</td>
+        				<td data-title="Change" class="numeric">INDONESIA RUPPIAH</td>
+        				<td data-title="Change %" class="numeric"><%= @rm_idr %></td>
+        			</tr>
+        			<tr>
+        				<td data-title="Code">IDR</td>
+        				<td data-title="Company">1000 INDONESIA RUPPIAH</td>
+        				<td data-title="Price" class="numeric">MYR</td>
+        				<td data-title="Change" class="numeric">MALAYSIA RINGGIT</td>
+        				<td data-title="Change %" class="numeric"><%= @idr_rm %></td>
+        			</tr>
+        			<tr>
+        				<td data-title="Code">MYR</td>
+        				<td data-title="Company">100 RINGGIT MALAYSIA</td>
+        				<td data-title="Price" class="numeric">TBH</td>
+        				<td data-title="Change" class="numeric">THAI BAHT</td>
+        				<td data-title="Change %" class="numeric"><%= @rm_baht %></td>
+        			</tr>
+        			<tr>
+        				<td data-title="Code">TBH</td>
+        				<td data-title="Company">1000 THAI BAHT</td>
+        				<td data-title="Price" class="numeric">MYR</td>
+        				<td data-title="Change" class="numeric">MALAYSIA RINGGIT</td>
+        				<td data-title="Change %" class="numeric"><%= @baht_rm %></td>
+        			</tr>
+        		</tbody>
+        	</table>
+        </div>
+    </div>
+    <div class="row">
+        <p class="bg-success" style="padding:10px;margin-top:20px"><small><a href="http://elvery.net/demo/responsive-tables/#no-more-tables" target="_blank">Link</a> to calculator</small></p>
+    </div>
+</div>

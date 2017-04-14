@@ -20,5 +20,6 @@ Rails.application.routes.draw do
   get '/transfer' => "homes#transfer"
   get '/value' => "homes#value"
   get '/crypto' => "homes#crypto"
+  get '/currency' => "homes#currency"
 
 end
