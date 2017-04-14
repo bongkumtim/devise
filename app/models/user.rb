@@ -11,4 +11,8 @@ class User < ApplicationRecord
   UserMailer.send_welcome_email(self).deliver_later
 end
 
+  def self.search(search)
+     where("email LIKE ?", "%#{search}%")
+  end
+
 end

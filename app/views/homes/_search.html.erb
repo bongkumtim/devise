@@ -1,6 +1,6 @@
 <div class="input-group">
   <%= form_tag(transfer_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search] %>
+    <%= text_field_tag :search, params[:search],class: "phmargin", size: "23", placeholder: "email address"  %>
     <span class="input-group-btn">
       <%= submit_tag "Search", class: 'btn btn-default' %>
     </span>
